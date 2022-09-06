@@ -1,37 +1,76 @@
 """Module for checking the even logic."""
-import prompt
 import random
+
+import prompt
 
 
 def welcome_user():
-    """Asking for a name of user."""
+    """Ask for a name of user.
+
+    :return: name
+    """
     name = prompt.string('May I have your name? ')
     print('Hello, {name}!'.format(name=name))
     return name
 
 
+def random_number():
+    """Randomize a number.
+
+    :return: random number
+    """
+    return random.randint(0, 100)
+
+
+def wrong_answer(answer, name):
+    """
+    Wrong answer of user logic.
+
+    :param: answer, name
+    """
+    text = 'is wrong answer ;(. Correct answer was'
+    if answer == 'yes':
+        print("'{answer}' {message} 'no'.Let's try again, {name}!".format(
+            answer=answer, name=name, message=text,
+        ),
+        )
+    elif answer == 'no':
+        print("'{answer}' {message} 'yes'.\nLet's try again, {name}!".format(
+            answer=answer, name=name, message=text,
+        ),
+        )
+    else:
+        print(
+            "'{answer}' is wrong answer ;(\nLet's try again, {name}!".format(
+                answer=answer, name=name,
+            ),
+        )
+
+
+def user_answer():
+    """
+    Answer from user.
+
+    :return: answer
+    """
+    return prompt.string('Your answer: ')
+
+
 def even_checking(name):
-    """Checking entered number - even or not."""
+    """Check entered number - even or not."""
     count = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while count != 3:
-        random_number = random.randint(0, 100)
-        print('Question: {}'.format(random_number))
-        user_answer = prompt.string('Your answer: ')
-        if random_number % 2 == 0 and user_answer == 'yes':
+        number = random_number()
+        print('Question: {random_number}'.format(random_number=number))
+        answer = user_answer()
+        if number % 2 == 0 and answer == 'yes':
             count += 1
             print('Correct!')
-        elif random_number % 2 == 1 and user_answer == 'no':
+        elif number % 2 == 1 and answer == 'no':
             count += 1
             print('Correct!')
         else:
-            if user_answer == 'yes':
-                return print("'{answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {name}!".format(answer=user_answer, name=name))
-            elif user_answer == 'no':
-                return print("'{answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, {name}!".format(answer=user_answer, name=name))
-            else:
-                return print("'{answer}' is wrong answer ;(\nLet's try again, {name}!".format(
-                    answer=user_answer, name=name))
+            return wrong_answer(answer, name)
+
     print('Congratulations, {name}!'.format(name=name))
-
-
