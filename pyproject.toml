@@ -8,10 +8,14 @@ packages = [{include = "brain_games"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+prompt = "^0.4.1"
 
 [tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
+brain-games = "brain_games.scripts.brain_games_scr:main"
 
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.5.0"
 
 [build-system]
 requires = ["poetry-core"]
