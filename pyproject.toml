@@ -16,6 +16,7 @@ brain-games = "brain_games.scripts.brain_games_scr:main"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.5.0"
+wemake-python-styleguide = "^0.16.1"
 
 [build-system]
 requires = ["poetry-core"]
