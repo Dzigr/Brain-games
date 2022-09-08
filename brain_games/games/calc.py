@@ -4,7 +4,7 @@ from brain_games.games_core import (random_number, user_answer, welcome_user,
 import random
 
 
-def number_calculation():
+def result_calculation():
     """Checking the result of expression match with entered number."""
     name = welcome_user()
     count = 0
