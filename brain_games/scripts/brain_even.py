@@ -1,12 +1,11 @@
 """Even script."""
 # !/usr/bin/env python3
-from brain_games.even import even_checking, welcome_user
+from brain_games.games.even import even_checking
 
 
 def main():
     """Greetings and checking the number for even or not."""
-    print('Welcome to the Brain Games!')
-    even_checking(welcome_user())
+    even_checking()
 
 
 if __name__ == '__main__':
