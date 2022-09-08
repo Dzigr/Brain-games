@@ -28,17 +28,13 @@ def wrong_answer(answer, name):
 
     :param: answer, name
     """
-    text = 'is wrong answer ;(. Correct answer was'
+    text = """'{answer}' is wrong answer ;(. Correct answer was '{right_answer}'.
+    \rLet's try again, {name}!
+    """
     if answer == 'yes':
-        print("'{answer}' {message} 'no'.Let's try again, {name}!".format(
-            answer=answer, name=name, message=text,
-        ),
-        )
+        print(text.format(answer=answer, right_answer='no', name=name))
     elif answer == 'no':
-        print("'{answer}' {message} 'yes'.\nLet's try again, {name}!".format(
-            answer=answer, name=name, message=text,
-        ),
-        )
+        print(text.format(answer=answer, right_answer='yes', name=name))
     else:
         print(
             "'{answer}' is wrong answer ;(\nLet's try again, {name}!".format(
@@ -54,4 +50,3 @@ def user_answer():
     :return: answer
     """
     return prompt.string('Your answer: ')
-
