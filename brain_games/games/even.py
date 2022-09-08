@@ -4,7 +4,7 @@ from brain_games.games_core import (random_number, user_answer, welcome_user,
 
 
 def even_checking():
-    """Check entered number - even or not."""
+    """Checking entered number - even or not."""
     name = welcome_user()
     count = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
@@ -12,6 +12,7 @@ def even_checking():
         number = random_number()
         print('Question: {random_number}'.format(random_number=number))
         answer = user_answer()
+        right_answer = ("yes" if number % 2 == 0 else "no")
         if number % 2 == 0 and answer == 'yes':
             count += 1
             print('Correct!')
@@ -19,6 +20,6 @@ def even_checking():
             count += 1
             print('Correct!')
         else:
-            return wrong_answer(answer, name)
+            return wrong_answer(answer, name, right_answer)
 
     print('Congratulations, {name}!'.format(name=name))

@@ -20,10 +20,10 @@ def random_number():
 
     :return: random number
     """
-    return random.randint(0, 100)
+    return random.randint(1, 100)
 
 
-def wrong_answer(answer, name):
+def wrong_answer(answer, name, right_answer):
     """
     Wrong answer of user logic.
 
@@ -33,9 +33,9 @@ def wrong_answer(answer, name):
     \rLet's try again, {name}!
     """
     if answer == 'yes':
-        print(text.format(answer=answer, right_answer='no', name=name))
+        print(text.format(answer=answer, right_answer=right_answer, name=name))
     elif answer == 'no':
-        print(text.format(answer=answer, right_answer='yes', name=name))
+        print(text.format(answer=answer, right_answer=right_answer, name=name))
     else:
         print(
             "'{answer}' is wrong answer ;(\nLet's try again, {name}!".format(
