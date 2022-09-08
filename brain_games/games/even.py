@@ -1,9 +1,11 @@
 """Module for checking the even logic."""
-from brain_games.games_core import random_number, user_answer, welcome_user, wrong_answer
+from brain_games.games_core import (random_number, user_answer, welcome_user,
+                                    wrong_answer)
 
 
-def even_checking(name=welcome_user()):
+def even_checking():
     """Check entered number - even or not."""
+    name = welcome_user()
     count = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while count != 3:
