@@ -22,7 +22,7 @@ def random_number():
 
     :return: random number
     """
-    return random.randint(1, 100)
+    return random.randint(1, 10)
 
 
 def opposite_answer(answer):
