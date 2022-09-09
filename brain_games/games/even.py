@@ -4,7 +4,10 @@ from brain_games.games_core import (ROUNDS, opposite_answer, random_number,
 
 
 def even_checking():
-    """Check entered number - even or not."""
+    """Check entered number - even or not.
+
+    :return: user answer, name and right answer
+    """
     name = welcome_user()
     count = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')

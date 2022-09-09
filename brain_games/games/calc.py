@@ -24,11 +24,13 @@ def result_calculation():
 def calculation():
     """Mathematics logic.
 
+    To avoid big nums in expression the random number divide to 3.
+
     return: result of expression
     """
     math_operations = '*-+'
-    first_num = random_number()
-    second_num = random_number()
+    first_num = round(random_number() / 3)
+    second_num = round(random_number() / 3)
     question = '{first_number}{sign}{second_number}'.format(
         first_number=max(first_num, second_num),
         sign=random.choice(math_operations),
