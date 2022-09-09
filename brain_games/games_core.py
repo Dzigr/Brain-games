@@ -3,6 +3,8 @@ import random
 
 import prompt
 
+ROUNDS = 3
+
 
 def welcome_user():
     """Ask for a name of user.

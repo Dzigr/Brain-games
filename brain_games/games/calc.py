@@ -1,8 +1,8 @@
 """Module for calculation."""
 import random
 
-from brain_games.games_core import (random_number, user_answer, welcome_user,
-                                    wrong_answer)
+from brain_games.games_core import (ROUNDS, random_number, user_answer,
+                                    welcome_user, wrong_answer)
 
 
 def result_calculation():
@@ -10,7 +10,7 @@ def result_calculation():
     name = welcome_user()
     count = 0
     print('What is the result of the expression?')
-    while count != 3:
+    while count != ROUNDS:
         right_answer = calculation()
         answer = int(user_answer())
         if answer == right_answer:
