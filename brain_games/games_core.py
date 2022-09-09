@@ -44,14 +44,7 @@ def wrong_answer(answer, name, right_answer):
     text = """'{answer}' is wrong answer ;(. Correct answer was '{right_answer}'.
     \rLet's try again, {name}!
     """
-    if answer != right_answer:
-        print(text.format(answer=answer, right_answer=right_answer, name=name))
-    else:
-        print(
-            "'{answer}' is wrong answer ;(\nLet's try again, {name}!".format(
-                answer=answer, name=name,
-            ),
-        )
+    print(text.format(answer=answer, right_answer=right_answer, name=name))
 
 
 def user_answer():
