@@ -1,4 +1,4 @@
-"""Module for checking the even logic."""
+"""Module with common functions for all games."""
 import random
 
 import prompt

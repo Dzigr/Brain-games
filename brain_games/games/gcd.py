@@ -18,8 +18,8 @@ def divisor_checking():
             second_number=given_numbers[1],
         ),
         )
-        right_answer = divisor_calculation(sorted(given_numbers))
-        answer = user_answer()
+        right_answer = divisor_calculation(given_numbers)
+        answer = int(user_answer())
         if answer == right_answer:
             count += 1
             print('Correct!')
@@ -33,9 +33,16 @@ def divisor_calculation(numbers):
 
     :return: greatest divisor
     """
-    if numbers[1] % numbers[0] == 0:
-        return numbers[0]
-    else:
-        for num in range(int(numbers[1] / 2), 0, -1):
-            if (numbers[1] and numbers[0]) % num == 0:
-                return num
+    for num in range(max(numbers), 0, -1):
+        if modulo(numbers, num):
+            return num
+
+
+def modulo(numbers, num):
+    """Check for modulo.
+
+    :return: boolean
+    """
+    first_number, second_number = numbers
+    if first_number % num == 0 and second_number % num == 0:
+        return True
