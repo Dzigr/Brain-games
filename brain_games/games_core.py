@@ -17,6 +17,26 @@ def welcome_user():
     return name
 
 
+def arithmetic_progression(max_step=15):
+    """Random progression.
+
+    One of the number under the random index replaced fo dots.
+
+    :return: progression, right answer
+    """
+    start = random_number()
+    step = random.randint(3, max_step)
+    progression = [num for num in range(
+        start,
+        start + step * random.randint(6, 10),
+        step
+    )]
+    dots = random.randint(1, len(progression) - 1)
+    right_answer = progression[dots]
+    progression[dots] = '..'
+    return progression, right_answer
+
+
 def random_number():
     """Randomize a number.
 
