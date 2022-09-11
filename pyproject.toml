@@ -19,7 +19,7 @@ brain-progression = "brain_games.scripts.brain_progression:main"
 brain-prime = "brain_games.scripts.brain_prime:main"
 
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev.dependencies]
 ipython = "^8.5.0"
 wemake-python-styleguide = "^0.16.1"
 
