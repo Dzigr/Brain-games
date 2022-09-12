@@ -17,6 +17,17 @@ def welcome_user():
     return name
 
 
+def game_question(number1, number2='', sign=''):
+    """Print for question.
+
+    :param:first and second number, operator if needed.
+    """
+    print('Question: {num1}{sign}{num2}'.format(
+        num1=number1, sign=sign, num2=number2,
+    ),
+    )
+
+
 def arithmetic_progression(max_step=15):
     """Random progression.
 
