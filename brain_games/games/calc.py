@@ -1,7 +1,7 @@
 """Module for calculation."""
 import random
 
-from brain_games.games_core import (ROUNDS, game_question,random_number,
+from brain_games.games_core import (ROUNDS, game_question, random_number,
                                     user_answer, welcome_user, wrong_answer)
 
 
