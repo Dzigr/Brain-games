@@ -22,7 +22,7 @@ def game_question(number1, number2='', sign=''):
 
     :param:first and second number, operator if needed.
     """
-    print('Question: {num1}{sign}{num2}'.format(
+    print('Question: {num1} {sign} {num2}'.format(
         num1=number1, sign=sign, num2=number2,
     ),
     )

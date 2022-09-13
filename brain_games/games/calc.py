@@ -31,7 +31,7 @@ def calculation():
     math_operations = '*-+'
     first_num = round(random_number() / 3)
     second_num = round(random_number() / 3)
-    question = '{first_number}{sign}{second_number}'.format(
+    question = '{first_number} {sign} {second_number}'.format(
         first_number=max(first_num, second_num),
         sign=random.choice(math_operations),
         second_number=min(first_num, second_num),
