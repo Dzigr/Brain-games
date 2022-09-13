@@ -72,7 +72,8 @@ def wrong_answer(answer, name, right_answer):
 
     :param: answer, name
     """
-    text = """'{answer}' is wrong answer ;(. Correct answer was '{right_answer}'.
+    text = """'
+    {answer}' is wrong answer ;(. Correct answer was '{right_answer}'.
     \rLet's try again, {name}!
     """
     print(text.format(answer=answer, right_answer=right_answer, name=name))
