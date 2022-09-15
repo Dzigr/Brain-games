@@ -668,7 +668,7 @@ typing_extensions = ">=3.6,<5.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "2242972c74b71f6e02865100fbfa06143219acf84442a9e09cb60fd2484d1a91"
+content-hash = "825510bc07fa7dc6b767f23be486f3438967239d3131a66a76cff4e2e607ce9a"
 
 [metadata.files]
 appnope = [
