@@ -1,25 +1,27 @@
 """Module for arithmetic progression."""
-from brain_games.games_core import (ROUNDS, arithmetic_progression,
-                                    user_answer, welcome_user, wrong_answer)
+from random import randint
+
+GAME_RULE = 'What number is missing in the progression?'
 
 
-def progression_checking():
-    """Check for right missing number in progression.
+def game_core(max_step=15):
+    """Check for right missing number in the random progression.
 
-    :return: user answer, name and right answer
+    One of the number under the random index replaced for dots.
+
+    :return: right answer
     """
-    name = welcome_user()
-    count = 0
-    print('What number is missing in the progression?')
-    while count != ROUNDS:
-        progression, right_answer = arithmetic_progression()
-        print('Question: {progression}'.format(
-            progression=' '.join(map(str, progression))),
-        )
-        answer = int(user_answer())
-        if answer == right_answer:
-            count += 1
-            print('Correct!')
-        else:
-            return wrong_answer(answer, name, right_answer)
-    print('Congratulations, {name}!'.format(name=name))
+    start = randint(1, 100)
+    step = randint(3, max_step)
+    progression = [num for num in range(
+        start,
+        start + step * randint(6, 10),
+        step,
+    )]
+    dots = randint(1, len(progression) - 1)
+    right_answer = progression[dots]
+    progression[dots] = '..'
+    print('Question: {progression}'.format(
+        progression=' '.join(map(str, progression))),
+    )
+    return right_answer
