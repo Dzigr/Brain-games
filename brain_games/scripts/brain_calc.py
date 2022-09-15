@@ -1,11 +1,12 @@
 """Calculation script."""
 # !/usr/bin/env python3
-from brain_games.games.calc import result_calculation
+import brain_games.games.calc as core
+from brain_games.games_core import general_core
 
 
 def main():
-    """Greetings and checking the number for even or not."""
-    result_calculation()
+    """Greetings and checking the result of expression."""
+    general_core(core)
 
 
 if __name__ == '__main__':
