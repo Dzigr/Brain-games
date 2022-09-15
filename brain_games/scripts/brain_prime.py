@@ -1,11 +1,12 @@
 """Prime script."""
 # !/usr/bin/env python3
-from brain_games.games.prime import prime_checking
+import brain_games.games.prime as core
+from brain_games.games_core import general_core
 
 
 def main():
     """Greetings and checking prime number or not."""
-    prime_checking()
+    general_core(core)
 
 
 if __name__ == '__main__':
