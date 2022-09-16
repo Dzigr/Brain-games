@@ -4,12 +4,12 @@ from random import randint
 GAME_RULE = 'What number is missing in the progression?'
 
 
-def game_core(max_step=15):
+def generate_round(max_step=15):
     """Check for right missing number in the random progression.
 
     One of the number under the random index replaced for dots.
 
-    :return: right answer
+    :return: right answer, question
     """
     start = randint(1, 100)
     step = randint(3, max_step)
@@ -21,7 +21,6 @@ def game_core(max_step=15):
     dots = randint(1, len(progression) - 1)
     right_answer = progression[dots]
     progression[dots] = '..'
-    print('Question: {progression}'.format(
-        progression=' '.join(map(str, progression))),
-    )
-    return right_answer
+    question = '{progression}'.format(
+        progression=' '.join(map(str, progression)))
+    return right_answer, question

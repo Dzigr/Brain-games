@@ -1,28 +1,26 @@
 """Module for calculation."""
+import operator
 from random import choice, randint
 
 GAME_RULE = 'What is the result of the expression?'
 
 
-def game_core():
+def generate_round():
     """Mathematics logic.
 
-    return: right answer
+    return: right answer, question
     """
-    math_operations = choice('*-+')
-    if math_operations == '*':
+    operators = {'+': operator.add, '-': operator.sub, '*': operator.mul}
+    sign = choice(list(operators.keys()))
+    if sign == '*':
         first_num = randint(1, 10)
         second_num = randint(1, 10)
     else:
         first_num = randint(1, 100)
         second_num = randint(1, 100)
     question = '{first_number} {sign} {second_number}'.format(
-        first_number=max(first_num, second_num),
-        sign=math_operations,
-        second_number=min(first_num, second_num),
+        first_number=first_num,
+        sign=sign,
+        second_number=second_num,
     )
-    print('Question: {question}'.format(
-        question=question,
-    ),
-    )
-    return eval(question)
+    return operators[sign](first_num, second_num), question

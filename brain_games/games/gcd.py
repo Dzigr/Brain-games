@@ -4,27 +4,27 @@ from random import randint
 GAME_RULE = 'Find the greatest common divisor of given numbers.'
 
 
-def game_core():
+def generate_round():
     """Check for greater divisor between 2 nums.
 
-    :return: right answer
+    :return: right answer, question
     """
     given_numbers = (randint(1, 100), randint(1, 100))
-    print('Question: {first_number} {second_number}'.format(
+    question = '{first_number} {second_number}'.format(
         first_number=given_numbers[0],
         second_number=given_numbers[1],
-    ),
     )
-    for num in range(max(given_numbers), 0, -1):
-        if modulo(given_numbers, num):
-            return num
+    return gcd(*given_numbers), question
 
 
-def modulo(numbers, num):
-    """Check for modulo.
+def gcd(number1, number2):
+    """Calculate greater divisor between 2 nums.
 
-    :return: boolean
+    :return: greater divisor
     """
-    first_number, second_number = numbers
-    if first_number % num == 0 and second_number % num == 0:
-        return True
+    while number1 != number2:
+        if number1 > number2:
+            number1 -= number2
+        else:
+            number2 -= number1
+    return number1

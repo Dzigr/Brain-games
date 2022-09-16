@@ -4,14 +4,12 @@ from random import randint
 GAME_RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def game_core():
+def generate_round():
     """Check entered number - even or not.
 
-    :return: right answer
+    :return: right answer, question
     """
     number = randint(1, 100)
-    print('Question: {random_number}'.format(random_number=number))
-    if number % 2 == 0:
-        return 'yes'
-    elif number % 2 == 1:
-        return 'no'
+    right_answer = 'yes' if number % 2 == 0 else 'no'
+    question = str(number)
+    return right_answer, question
